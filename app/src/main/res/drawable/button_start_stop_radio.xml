@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_activated="false" android:drawable="@drawable/button_to_start_radio" />
+    <item android:state_activated="true" android:drawable="@drawable/button_to_stop_radio" />
+    <item android:state_pressed="true" android:drawable="@drawable/start_stop_animation" />
+</animated-selector>

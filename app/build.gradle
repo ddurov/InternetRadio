@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'ru.freelance.internetradio'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "ru.freelance.internetradio"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "androidx.media:media:1.6.0"
+    implementation "androidx.media3:media3-exoplayer:1.0.1"
+    implementation "androidx.media3:media3-ui:1.0.1"
+    implementation "androidx.media3:media3-session:1.0.1"
+    implementation "org.jsoup:jsoup:1.16.1"
+}

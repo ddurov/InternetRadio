@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lighterColor">#BCE6F5</color>
+    <color name="defaultColor">#00A0D8</color>
+    <color name="littleShadowyColor">#00A0D4</color>
+    <color name="shadowyColor">#00A0D0</color>
+    <color name="overShadowyColor">#B4B4B4</color>
+
+    <color name="buttonBackground">@color/lighterColor</color>
+    <color name="inputBackground">@color/lighterColor</color>
+
+    <color name="textColor">#000000</color>
+    <color name="placeholderColor">#1E1E1E</color>
+
+    <color name="iconForeground">#3C3C3C</color>
+</resources>

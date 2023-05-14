@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:pathData="M 0 8 A 1 1 0 0 0 16 8 A 1 1 0 0 0 0 8 M 1 8 C 2 -1 14 -1 15 8 C 14 17 2 17 1 8 M 8 4 A 1 1 0 0 0 6 4 L 6 9 L 9 12 A 1 1 0 0 0 10 10 L 8 8 L 8 4 Z"
+        android:fillColor="@color/defaultColor" />
+    <path
+        android:pathData="M 19 9 C 17 9 17 7 19 7 L 41 7 Q 43 7 43 9 L 43 46 Q 43 48 41 48 L 9 48 Q 7 48 7 46 L 7 19 C 7 17 9 17 9 19 L 9 44 Q 9 46 11 46 L 39 46 Q 41 46 41 44 L 41 11 Q 41 9 39 9 L 19 9 Z"
+        android:fillColor="@color/defaultColor" />
+    <path
+        android:pathData="M 20 21 L 33 17 A 1 1 0 0 0 33 15 L 20 11 A 1 1 0 0 0 19 12 L 19 20 A 1 1 0 0 0 20 21 Z"
+        android:fillColor="@color/defaultColor" />
+    <path
+        android:pathData="M 15 25 L 35 25 Q 37 25 37 27 Q 37 29 35 29 L 15 29 Q 13 29 13 27 Q 13 25 15 25 Z"
+        android:fillColor="@color/defaultColor" />
+    <path
+        android:pathData="M 13 33 Q 13 31 15 31 L 35 31 Q 37 31 37 33 Q 37 35 35 35 L 15 35 Q 13 35 13 33 Z"
+        android:fillColor="@color/defaultColor" />
+    <path
+        android:pathData="M 13 39 Q 13 37 15 37 L 35 37 Q 37 37 37 39 Q 37 41 35 41 L 15 41 Q 13 41 13 39"
+        android:fillColor="@color/defaultColor" />
+</vector>
