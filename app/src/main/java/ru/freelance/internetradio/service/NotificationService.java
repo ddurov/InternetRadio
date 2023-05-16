@@ -53,17 +53,14 @@ public class NotificationService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         switch (Objects.requireNonNull(intent.getAction())) {
             case ACTION.PLAY_PAUSE_ACTION:
-                if (isPlaying) {
-                    RadioPlayer.pause();
-                    isPlaying = false;
-                } else {
+                if (!isPlaying) {
                     if (!notificationShowed) {
                         showNotify();
                         notificationShowed = true;
                     }
                     RadioPlayer.start(radioUrlPath, FakeContext.getInstance());
-                    isPlaying = true;
-                }
+                } else RadioPlayer.pause();
+                isPlaying = !isPlaying;
                 break;
             case ACTION.STOP_ACTION:
                 RadioPlayer.stop();

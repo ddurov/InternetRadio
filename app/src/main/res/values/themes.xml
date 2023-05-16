@@ -3,7 +3,7 @@
         <item name="colorPrimary">@color/defaultColor</item>
         <item name="colorPrimaryDark">@color/littleShadowyColor</item>
         <item name="colorAccent">@color/overShadowyColor</item>
-        <item name="android:navigationBarColor">@color/lighterColor</item>
+        <item name="android:navigationBarColor">#BCE6F5</item>
         <item name="android:windowBackground">@drawable/background</item>
     </style>
 </resources>

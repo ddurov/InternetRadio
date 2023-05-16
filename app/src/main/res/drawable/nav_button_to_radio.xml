@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="false">
+        <vector
+            android:width="48dp"
+            android:height="48dp"
+            android:viewportWidth="48"
+            android:viewportHeight="48">
+            <path
+                android:pathData="M 11 4 C 0 17 0 29 11 44 A 1 1 0 0 0 12 42 C 2 29 2 17 12 6 A 1 1 0 0 0 11 4 Z"
+                android:fillColor="@color/defaultColor" />
+            <path
+                android:pathData="M 15 8 C 5 18 5 30 15 40 A 1 1 0 0 0 16 38 C 7 30 7 18 16 10 A 1 1 0 0 0 15 8 Z"
+                android:fillColor="@color/defaultColor" />
+            <path
+                android:pathData="M 19 12 C 11 19 11 29 19 36 A 1 1 0 0 0 20 34 C 13 29 13 19 20 14 A 1 1 0 0 0 19 12 Z"
+                android:fillColor="@color/defaultColor" />
+            <path
+                android:pathData="M 18 24 A 1 1 0 0 0 32 24 A 1 1 0 0 0 18 24 M 20 24 Q 20 19 25 19 Q 30 19 30 24 Q 30 29 25 29 Q 20 29 20 24 Z"
+                android:fillColor="@color/defaultColor" />
+            <path
+                android:pathData="M 31 36 C 39 29 39 19 31 12 A 1 1 0 0 0 30 14 C 37 19 37 29 30 34 A 1 1 0 0 0 31 36 Z"
+                android:fillColor="@color/defaultColor" />
+            <path
+                android:pathData="M 35 40 C 45 30 45 18 35 8 A 1 1 0 0 0 34 10 C 43 18 43 30 34 38 A 1 1 0 0 0 35 40 Z"
+                android:fillColor="@color/defaultColor" />
+            <path
+                android:pathData="M 38 6 C 49 17 49 29 38 42 A 1 1 0 0 0 39 44 C 51 29 51 17 39 4 A 1 1 0 0 0 38 6 Z"
+                android:fillColor="@color/defaultColor" />
+        </vector>
+    </item>
+    <item android:state_selected="true">
+        <vector android:width="48dp"
+            android:height="48dp"
+            android:viewportWidth="48"
+            android:viewportHeight="48">
+            <path
+                android:pathData="M 11 4 C 0 17 0 29 11 44 A 1 1 0 0 0 12 42 C 2 29 2 17 12 6 A 1 1 0 0 0 11 4 Z"
+                android:fillColor="@color/overShadowyColor" />
+            <path
+                android:pathData="M 15 8 C 5 18 5 30 15 40 A 1 1 0 0 0 16 38 C 7 30 7 18 16 10 A 1 1 0 0 0 15 8 Z"
+                android:fillColor="@color/overShadowyColor" />
+            <path
+                android:pathData="M 19 12 C 11 19 11 29 19 36 A 1 1 0 0 0 20 34 C 13 29 13 19 20 14 A 1 1 0 0 0 19 12 Z"
+                android:fillColor="@color/overShadowyColor" />
+            <path
+                android:pathData="M 18 24 A 1 1 0 0 0 32 24 A 1 1 0 0 0 18 24 M 20 24 Q 20 19 25 19 Q 30 19 30 24 Q 30 29 25 29 Q 20 29 20 24 Z"
+                android:fillColor="@color/overShadowyColor" />
+            <path
+                android:pathData="M 31 36 C 39 29 39 19 31 12 A 1 1 0 0 0 30 14 C 37 19 37 29 30 34 A 1 1 0 0 0 31 36 Z"
+                android:fillColor="@color/overShadowyColor" />
+            <path
+                android:pathData="M 35 40 C 45 30 45 18 35 8 A 1 1 0 0 0 34 10 C 43 18 43 30 34 38 A 1 1 0 0 0 35 40 Z"
+                android:fillColor="@color/overShadowyColor" />
+            <path
+                android:pathData="M 38 6 C 49 17 49 29 38 42 A 1 1 0 0 0 39 44 C 51 29 51 17 39 4 A 1 1 0 0 0 38 6 Z"
+                android:fillColor="@color/overShadowyColor" />
+        </vector>
+    </item>
+</selector>
