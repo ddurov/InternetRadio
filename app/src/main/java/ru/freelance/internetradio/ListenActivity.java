@@ -2,16 +2,23 @@ package ru.freelance.internetradio;
 
 import static ru.freelance.internetradio.service.Values.isPlaying;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.support.v4.media.session.MediaControllerCompat;
+import android.support.v4.media.session.PlaybackStateCompat;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ru.freelance.internetradio.service.NotificationService;
-import ru.freelance.internetradio.service.Values;
+import ru.freelance.internetradio.service.RadioService;
 
 public class ListenActivity extends AppCompatActivity {
+
+    RadioService.RadioServiceBinder radioServiceBinder;
+    MediaControllerCompat mediaControllerCompat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,16 +26,45 @@ public class ListenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listen);
 
         Button startStopListen = findViewById(R.id.startStopRadio);
-        // release activities below
         Button toSchedule = findViewById(R.id.toSchedule);
-        ((Button) findViewById(R.id.toListenRadio)).setSelected(true);
+        findViewById(R.id.toListenRadio).setSelected(true);
         Button toContacts = findViewById(R.id.toContacts);
 
+        bindService(new Intent(this, RadioService.class), new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                radioServiceBinder = (RadioService.RadioServiceBinder) service;
+                mediaControllerCompat = new MediaControllerCompat(
+                        ListenActivity.this,
+                        radioServiceBinder.getMediaSessionToken()
+                );
+                mediaControllerCompat.registerCallback(new MediaControllerCompat.Callback() {
+                    @Override
+                    public void onPlaybackStateChanged(PlaybackStateCompat state) {
+                        super.onPlaybackStateChanged(state);
+                        if (state == null) return;
+                        isPlaying = state.getState() == PlaybackStateCompat.STATE_PLAYING;
+                        startStopListen.setActivated(isPlaying);
+                    }
+                });
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                radioServiceBinder = null;
+                mediaControllerCompat = null;
+            }
+        }, BIND_AUTO_CREATE);
+
         startStopListen.setOnClickListener(v -> {
-            Intent serviceIntent = new Intent(this, NotificationService.class);
-            serviceIntent.setAction(Values.ACTION.PLAY_PAUSE_ACTION);
-            startService(serviceIntent);
-            startStopListen.setActivated(!isPlaying);
+            if (mediaControllerCompat != null) {
+                if (isPlaying) {
+                    mediaControllerCompat.getTransportControls().pause();
+                } else {
+                    mediaControllerCompat.getTransportControls().play();
+                }
+                isPlaying = !isPlaying;
+            }
         });
     }
 }
