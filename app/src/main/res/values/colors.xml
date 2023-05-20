@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="lighterColor">#00A0FF</color>
+    <color name="lighterColor">#00A0F0</color>
     <color name="defaultColor">#00A0D8</color>
     <color name="littleShadowyColor">#E600A0D8</color>
     <color name="shadowyColor">#CC00A0D8</color>
-    <color name="overShadowyColor">#3300A0D8</color>
+    <color name="overShadowyColor">#B200A0D8</color>
 </resources>

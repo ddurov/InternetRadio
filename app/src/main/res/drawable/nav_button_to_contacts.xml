@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="false">
+    <item android:state_activated="false">
         <vector
             android:viewportHeight="414"
             android:viewportWidth="414"
@@ -23,7 +23,7 @@
                 android:pathData="M406,42.54c-0.35,-3.57 -2.6,-6.68 -5.87,-8.14c-12.34,-5.51 -22.99,-8.07 -33.54,-8.07c-10.55,0 -21.21,2.57 -33.55,8.07c-3.28,1.46 -5.52,4.57 -5.88,8.15c-5.46,55.05 -5.46,108.56 0,163.61c0.35,3.49 2.49,6.53 5.64,8.04l6.79,139.38c0.04,0.69 0.14,1.37 0.31,2.03l11.5,44.17c1.15,4.41 5.13,7.48 9.68,7.48h11c4.55,0 8.53,-3.08 9.68,-7.48l11.49,-44.17c0.17,-0.66 0.28,-1.35 0.31,-2.03l6.8,-139.38c3.15,-1.5 5.29,-4.55 5.64,-8.03C411.47,151.15 411.47,97.63 406,42.54zM346.5,50.47c3.55,-1.35 6.89,-2.35 10.08,-3.03v74.22c0,5.52 4.48,10 10,10c5.52,0 10,-4.48 10,-10V47.43c3.2,0.68 6.53,1.68 10.09,3.03c4.55,49.4 4.57,97.6 0.07,146.92h-40.32C341.93,148.03 341.95,99.83 346.5,50.47zM373.64,351.57l-7.05,27.12l-7.06,-27.12l-6.54,-134.18h27.19L373.64,351.57z" />
         </vector>
     </item>
-    <item android:state_selected="true">
+    <item android:state_activated="true">
         <vector
             android:viewportHeight="412"
             android:viewportWidth="412"

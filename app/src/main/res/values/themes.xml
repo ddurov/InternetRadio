@@ -6,4 +6,11 @@
         <item name="android:navigationBarColor">#BCE6F5</item>
         <item name="android:windowBackground">@drawable/background</item>
     </style>
+
+    <style name="Theme.InternetRadio.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="windowSplashScreenAnimationDuration">500</item>
+        <item name="windowSplashScreenBackground">@color/defaultColor</item>
+        <item name="postSplashScreenTheme">@style/Theme.InternetRadio</item>
+    </style>
 </resources>

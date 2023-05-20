@@ -27,7 +27,7 @@ public class ListenActivity extends AppCompatActivity {
 
         Button startStopListen = findViewById(R.id.startStopRadio);
         Button toSchedule = findViewById(R.id.toSchedule);
-        findViewById(R.id.toListenRadio).setSelected(true);
+        findViewById(R.id.toListenRadio).setActivated(true);
         Button toContacts = findViewById(R.id.toContacts);
 
         bindService(new Intent(this, RadioService.class), new ServiceConnection() {
@@ -65,6 +65,18 @@ public class ListenActivity extends AppCompatActivity {
                 }
                 isPlaying = !isPlaying;
             }
+        });
+
+        toSchedule.setOnClickListener(v -> {
+            Intent intent = new Intent(ListenActivity.this, ScheduleActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
+        });
+
+        toContacts.setOnClickListener(v -> {
+            Intent intent = new Intent(ListenActivity.this, ContactsActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
         });
     }
 }

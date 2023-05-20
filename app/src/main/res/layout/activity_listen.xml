@@ -43,14 +43,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
-    <ImageView
-        android:id="@+id/feather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/navigationBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_feather" />
-
     <LinearLayout
         android:id="@+id/navigationBar"
         android:layout_width="0dp"
@@ -69,6 +61,7 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/nav_button_to_schedule"
             android:drawablePadding="4dp"
+            android:fontFamily="@font/handwriting"
             android:text="Расписание"
             android:textColor="@color/defaultColor" />
 
@@ -80,6 +73,7 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/nav_button_to_radio"
             android:drawablePadding="4dp"
+            android:fontFamily="@font/handwriting"
             android:text="Радио"
             android:textColor="@color/defaultColor" />
 
@@ -91,6 +85,7 @@
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/nav_button_to_contacts"
             android:drawablePadding="4dp"
+            android:fontFamily="@font/handwriting"
             android:text="Связь с радио"
             android:textColor="@color/defaultColor" />
 
