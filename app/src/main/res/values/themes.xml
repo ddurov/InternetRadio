@@ -7,8 +7,7 @@
         <item name="android:windowBackground">@drawable/background</item>
     </style>
 
-    <style name="Theme.InternetRadio.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+    <style name="Theme.InternetRadio.Starting" parent="Theme.SplashScreen">\
         <item name="windowSplashScreenAnimationDuration">500</item>
         <item name="windowSplashScreenBackground">@color/defaultColor</item>
         <item name="postSplashScreenTheme">@style/Theme.InternetRadio</item>
