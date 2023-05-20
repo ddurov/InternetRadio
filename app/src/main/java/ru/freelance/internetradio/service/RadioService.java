@@ -12,7 +12,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
@@ -46,8 +45,6 @@ public class RadioService extends Service {
             );
 
     private MediaSessionCompat mediaSession;
-
-    private String trackTitle = null;
 
     private AudioManager audioManager;
     private AudioFocusRequest audioFocusRequest;
@@ -89,7 +86,6 @@ public class RadioService extends Service {
 
         exoPlayer = new ExoPlayer.Builder(appContext).build();
 
-        metadataBuilder.putBitmap(MediaMetadataCompat.METADATA_KEY_ART, BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon));
         metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_ARTIST, "Пожалуйста, подождите");
         metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_TITLE, "Загрузка...");
         mediaSession.setMetadata(metadataBuilder.build());
@@ -102,6 +98,8 @@ public class RadioService extends Service {
                     metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_ARTIST, trackInfo[0]);
                     metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_TITLE, trackInfo[1]);
                     mediaSession.setMetadata(metadataBuilder.build());
+                    NotificationManager notificationManager = (NotificationManager) FakeContext.getInstance().getSystemService(Context.NOTIFICATION_SERVICE);
+                    notificationManager.notify(1, getNotification());
                 }
             }
         });
@@ -191,11 +189,7 @@ public class RadioService extends Service {
     };
 
     private final AudioManager.OnAudioFocusChangeListener audioFocusChangeListener = focusChange -> {
-        if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-            exoPlayer.setPlayWhenReady(true);
-        } else {
-            exoPlayer.setPlayWhenReady(false);
-        }
+        exoPlayer.setPlayWhenReady(focusChange == AudioManager.AUDIOFOCUS_GAIN);
     };
 
     private final BroadcastReceiver becomingNoisyReceiver = new BroadcastReceiver() {
@@ -217,12 +211,6 @@ public class RadioService extends Service {
         public MediaSessionCompat.Token getMediaSessionToken() {
             return mediaSession.getSessionToken();
         }
-    }
-
-    private String singletonTrackTitle() {
-        if (trackTitle == null) {
-            return "Loading - Loading";
-        } else return trackTitle;
     }
 
     private Notification getNotification() {
