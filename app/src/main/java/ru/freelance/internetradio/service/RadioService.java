@@ -12,6 +12,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
@@ -86,8 +87,6 @@ public class RadioService extends Service {
 
         exoPlayer = new ExoPlayer.Builder(appContext).build();
 
-        metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_ARTIST, "Пожалуйста, подождите");
-        metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_TITLE, "Загрузка...");
         mediaSession.setMetadata(metadataBuilder.build());
         exoPlayer.addListener(new Player.Listener() {
             @Override
@@ -99,7 +98,7 @@ public class RadioService extends Service {
                     metadataBuilder.putString(MediaMetadataCompat.METADATA_KEY_TITLE, trackInfo[1]);
                     mediaSession.setMetadata(metadataBuilder.build());
                     NotificationManager notificationManager = (NotificationManager) FakeContext.getInstance().getSystemService(Context.NOTIFICATION_SERVICE);
-                    notificationManager.notify(1, getNotification());
+                    notificationManager.notify(1, getNotification(trackInfo[1], trackInfo[0]));
                 }
             }
         });
@@ -148,7 +147,7 @@ public class RadioService extends Service {
 
             mediaSession.setPlaybackState(stateBuilder.setState(PlaybackStateCompat.STATE_PLAYING, PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, 1).build());
 
-            startForeground(1, getNotification());
+            startForeground(1, getNotification("Loading...", "Please, wait"));
         }
 
         @Override
@@ -213,7 +212,7 @@ public class RadioService extends Service {
         }
     }
 
-    private Notification getNotification() {
+    private Notification getNotification(String nameSong, String artistSong) {
         NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -244,7 +243,10 @@ public class RadioService extends Service {
                         .setShowActionsInCompactView(1)
                         .setMediaSession(mediaSession.getSessionToken())
         );
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon));
         builder.setSmallIcon(R.drawable.ic_radio);
+        builder.setContentTitle(nameSong);
+        builder.setContentText(artistSong);
         builder.setShowWhen(false);
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setOnlyAlertOnce(true);

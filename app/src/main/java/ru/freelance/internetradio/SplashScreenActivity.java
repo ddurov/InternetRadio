@@ -29,10 +29,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
-            splashScreen = SplashScreen.installSplashScreen(this);
+        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
-
 
         new OkHttpClient().newCall(
                 new Request.Builder().url(Values.scheduleTextPage).build()
@@ -56,24 +54,12 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         });
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
-            new Thread(() -> {
-                while (true) {
-                    if (Values.scheduleText != null) {
-                        startActivity(new Intent(SplashScreenActivity.this, ListenActivity.class));
-                        finish();
-                        break;
-                    }
-                }
-            });
-        } else {
-            splashScreen.setKeepOnScreenCondition(() -> {
-                if (Values.scheduleText != null) {
-                    startActivity(new Intent(SplashScreenActivity.this, ListenActivity.class));
-                    finish();
-                    return false;
-                } else return true;
-            });
-        }
+        splashScreen.setKeepOnScreenCondition(() -> {
+            if (Values.scheduleText != null) {
+                startActivity(new Intent(SplashScreenActivity.this, ListenActivity.class));
+                finish();
+                return false;
+            } else return true;
+        });
     }
 }
