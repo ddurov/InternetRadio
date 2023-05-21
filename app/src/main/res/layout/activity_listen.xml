@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/handwriting"
             android:gravity="center|start"
-            android:text="Радио"
+            android:text="@string/radio"
             android:textColor="#FFFFFF"
             android:textSize="26sp" />
 
@@ -62,7 +62,7 @@
             android:drawableTop="@drawable/nav_button_to_schedule"
             android:drawablePadding="4dp"
             android:fontFamily="@font/handwriting"
-            android:text="Расписание"
+            android:text="@string/schedule"
             android:textColor="@color/defaultColor" />
 
         <Button
@@ -74,7 +74,7 @@
             android:drawableTop="@drawable/nav_button_to_radio"
             android:drawablePadding="4dp"
             android:fontFamily="@font/handwriting"
-            android:text="Радио"
+            android:text="@string/radio"
             android:textColor="@color/defaultColor" />
 
         <Button
@@ -86,9 +86,8 @@
             android:drawableTop="@drawable/nav_button_to_contacts"
             android:drawablePadding="4dp"
             android:fontFamily="@font/handwriting"
-            android:text="Связь с радио"
+            android:text="@string/contacts"
             android:textColor="@color/defaultColor" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

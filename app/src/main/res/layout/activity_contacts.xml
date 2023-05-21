@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/projectRealizeTexts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ContactsActivity">
@@ -29,7 +30,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/handwriting"
             android:gravity="center|start"
-            android:text="Контакты"
+            android:text="@string/contacts"
             android:textColor="#FFFFFF"
             android:textSize="26sp" />
 
@@ -53,14 +54,14 @@
             android:layout_weight="1"
             android:fontFamily="@font/handwriting"
             android:gravity="center"
-            android:text="Мы ВКонтакте:"
+            android:text="@string/WeInVKontakte"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/VKontakteButton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/vk" />
@@ -76,22 +77,22 @@
         app:layout_constraintTop_toBottomOf="@+id/VKontakte">
 
         <TextView
-            android:id="@+id/generalProjectManager"
+            android:id="@+id/projectRealization"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/handwriting"
             android:gravity="center"
-            android:text="Создание и реализация проекта: Михайлов С.А."
+            android:text="@string/ProjectRealization"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/appCreator"
+            android:id="@+id/appDeveloper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/handwriting"
             android:gravity="center"
-            android:text="Реализация приложения: @ddurv (VK/TG)"
+            android:text="@string/AppDeveloper"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
     </LinearLayout>
@@ -115,7 +116,7 @@
             android:drawableTop="@drawable/nav_button_to_schedule"
             android:drawablePadding="4dp"
             android:fontFamily="@font/handwriting"
-            android:text="Расписание"
+            android:text="@string/schedule"
             android:textColor="@color/defaultColor" />
 
         <Button
@@ -127,7 +128,7 @@
             android:drawableTop="@drawable/nav_button_to_radio"
             android:drawablePadding="4dp"
             android:fontFamily="@font/handwriting"
-            android:text="Радио"
+            android:text="@string/radio"
             android:textColor="@color/defaultColor" />
 
         <Button
@@ -139,7 +140,7 @@
             android:drawableTop="@drawable/nav_button_to_contacts"
             android:drawablePadding="4dp"
             android:fontFamily="@font/handwriting"
-            android:text="Связь с радио"
+            android:text="@string/contacts"
             android:textColor="@color/defaultColor" />
 
     </LinearLayout>

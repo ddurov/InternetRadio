@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Internet Radio</string>
+    <string name="app_name">Radio «Stikhiynoye»</string>
+    <string name="schedule">Schedule</string>
+    <string name="radio">Radio</string>
+    <string name="contacts">Contacts</string>
+    <string name="WeInVKontakte">We in VKontakte: </string>
+    <string name="ProjectRealization">Project realization: Mikhaylov S.A</string>
+    <string name="AppDeveloper">App developer: Danya Durov @ddurv (VK/TG)</string>
+    <string name="notification_loading">Loading...</string>
+    <string name="notification_loading_subtext">Please wait until data buffering</string>
+    <string name="notification_button_stop">Stop</string>
+    <string name="notification_button_play_pause">Play/Pause</string>
 </resources>

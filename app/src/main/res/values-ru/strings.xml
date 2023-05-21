@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Радио «Стихийное»</string>
+    <string name="schedule">Расписание</string>
+    <string name="radio">Радио</string>
+    <string name="contacts">Контакты</string>
+    <string name="WeInVKontakte">Мы в ВКонтакте: </string>
+    <string name="ProjectRealization">Реализация проекта: Михайлов С.А</string>
+    <string name="AppDeveloper">Разработчик приложения: Даня Дуров @ddurv (VK/TG)</string>
+    <string name="notification_loading">Загрузка...</string>
+    <string name="notification_loading_subtext">Пожалуйста подождите, данные загружаются</string>
+    <string name="notification_button_stop">Остановк</string>
+    <string name="notification_button_play_pause">Продолжить/Пауза</string>
+</resources>
