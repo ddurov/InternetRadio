@@ -1,4 +1,4 @@
-package ru.freelance.internetradio;
+package ru.radio.poems;
 
 import androidx.appcompat.app.AppCompatActivity;
 

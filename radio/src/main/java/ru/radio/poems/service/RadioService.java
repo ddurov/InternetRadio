@@ -1,7 +1,7 @@
-package ru.freelance.internetradio.service;
+package ru.radio.poems.service;
 
-import static ru.freelance.internetradio.service.Values.exoPlayer;
-import static ru.freelance.internetradio.service.Values.radioUrlPath;
+import static ru.radio.poems.service.Values.exoPlayer;
+import static ru.radio.poems.service.Values.radioUrlPath;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -33,8 +33,8 @@ import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 import androidx.media3.exoplayer.ExoPlayer;
 
-import ru.freelance.internetradio.ListenActivity;
-import ru.freelance.internetradio.R;
+import ru.radio.poems.ListenActivity;
+import ru.radio.poems.R;
 
 public class RadioService extends Service {
     private final String NOTIFICATION_DEFAULT_CHANNEL_ID = "default_channel";

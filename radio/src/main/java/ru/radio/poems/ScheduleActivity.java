@@ -1,4 +1,4 @@
-package ru.freelance.internetradio;
+package ru.radio.poems;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ru.freelance.internetradio.service.Values;
+import ru.radio.poems.service.Values;
 
 public class ScheduleActivity extends AppCompatActivity {
     @Override

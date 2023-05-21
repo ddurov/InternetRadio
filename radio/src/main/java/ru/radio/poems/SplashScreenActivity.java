@@ -1,4 +1,4 @@
-package ru.freelance.internetradio;
+package ru.radio.poems;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -20,7 +20,7 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import ru.freelance.internetradio.service.Values;
+import ru.radio.poems.service.Values;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreenActivity extends AppCompatActivity {

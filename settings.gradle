@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Internet Radio"
-include ':app'
+rootProject.name = "Radio"
+include ':radio'

@@ -1,6 +1,6 @@
-package ru.freelance.internetradio;
+package ru.radio.poems;
 
-import static ru.freelance.internetradio.service.Values.isPlaying;
+import static ru.radio.poems.service.Values.isPlaying;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ru.freelance.internetradio.service.RadioService;
+import ru.radio.poems.service.RadioService;
 
 public class ListenActivity extends AppCompatActivity {
 
