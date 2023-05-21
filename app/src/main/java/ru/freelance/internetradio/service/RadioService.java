@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
+import android.net.wifi.WifiManager;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
@@ -51,6 +52,8 @@ public class RadioService extends Service {
     private AudioFocusRequest audioFocusRequest;
     private boolean audioFocusRequested = false;
 
+    WifiManager.WifiLock wifiLock = null;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -71,6 +74,15 @@ public class RadioService extends Service {
                     .setAudioAttributes(audioAttributes)
                     .build();
         }
+
+        WifiManager wifiManager = (WifiManager) FakeContext.getInstance().getSystemService(Context.WIFI_SERVICE);
+
+        if (wifiManager != null)
+            wifiLock = wifiManager.createWifiLock(
+                    WifiManager.WIFI_MODE_FULL, "wifiLocker"
+            );
+
+        wifiLock.setReferenceCounted(false);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
@@ -143,6 +155,8 @@ public class RadioService extends Service {
                 registerReceiver(becomingNoisyReceiver, new IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY));
 
                 exoPlayer.setPlayWhenReady(true);
+
+                if (!wifiLock.isHeld()) wifiLock.acquire();
             }
 
             mediaSession.setPlaybackState(stateBuilder.setState(PlaybackStateCompat.STATE_PLAYING, PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, 1).build());
@@ -180,6 +194,8 @@ public class RadioService extends Service {
             mediaSession.setActive(false);
 
             mediaSession.setPlaybackState(stateBuilder.setState(PlaybackStateCompat.STATE_STOPPED, PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, 1).build());
+
+            if (wifiLock != null && wifiLock.isHeld()) wifiLock.release();
 
             stopForeground(true);
 
